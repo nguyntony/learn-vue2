@@ -22,17 +22,35 @@
       @press="toggleSecret"
     />
   </div>
+  <div>
+    <h1>this section is about SLOTS</h1>
+    <Slots>
+      <p>hhi hih ihih</p>
+      <template v-slot:links>
+        <a href="#">login</a>
+        <a href="#">more info</a>
+      </template>
+    </Slots>
+  </div>
+  <div v-if="showModal2">
+    <Modal @close="toggleModal2">
+      <p>this is a new modal</p>
+    </Modal>
+  </div>
+  <button @click="toggleModal2">show modal 2</button>
 </template>
 
 <script>
 import Modal from './components/Modal';
 import Tester from './components/Tester';
+import Slots from './components/Slots';
 
 export default {
   name: 'App',
   components: {
     Modal,
     Tester,
+    Slots,
   },
   data() {
     return {
@@ -44,6 +62,7 @@ export default {
       two: 'number2',
       three: 'number3',
       showSecret: false,
+      showModal2: false,
     };
   },
   methods: {
@@ -57,6 +76,10 @@ export default {
     },
     toggleSecret() {
       this.showSecret = !this.showSecret;
+    },
+    toggleModal2() {
+      this.showModal2 = !this.showModal2;
+      console.log(this.showModal2);
     },
   },
 };

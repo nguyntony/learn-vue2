@@ -8,7 +8,8 @@
   <h3>{{ counter }}</h3>
   <button @click="decreaseCounter">Decrement</button>
   <button @click="increaseCounter">Increment</button>
-  <button @click="changeCounter">Do something crazy</button>
+  <button @click.shift="changeCounter">Do something crazy</button>
+  <!-- click event modifiers -->
   <button @click="changeBackToZero">Change it back to a number</button>
 
   <div>

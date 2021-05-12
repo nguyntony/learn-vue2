@@ -1,10 +1,13 @@
 <template>
   <div class="backdrop" @click.self="closeModal">
-    <div class="modal" :class="{ sale: theme === 'sale' }">
+    <div class="modal">
+      <slot></slot>
+    </div>
+    <!-- <div class="modal" :class="{ sale: theme === 'sale' }">
       <h1>{{ header }}</h1>
       <p>{{ text }}</p>
       <p>{{ obj.content }}</p>
-    </div>
+    </div> -->
   </div>
 </template>
 
